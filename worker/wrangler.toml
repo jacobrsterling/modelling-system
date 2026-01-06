@@ -1,0 +1,11 @@
+name = "subdomain-router"
+main = "subdomain-router.js"
+compatibility_date = "2024-01-01"
+
+# Set these in the Cloudflare dashboard or via wrangler secret
+# [vars]
+# PAGES_DOMAIN = "your-project.pages.dev"
+# APP_DOMAIN = "yourdomain.com"
+
+# Routes - configure in dashboard after deployment
+# Route: *.yourdomain.com/*

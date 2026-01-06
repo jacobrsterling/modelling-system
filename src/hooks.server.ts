@@ -133,7 +133,9 @@ const siteResolver: Handle = async ({ event, resolve }) => {
   // Initialize site as null
   event.locals.site = null
 
-  const hostname = event.url.hostname + (event.url.port ? `:${event.url.port}` : '')
+  // Check for X-Forwarded-Host header (set by Cloudflare Worker for subdomain routing)
+  const forwardedHost = event.request.headers.get('X-Forwarded-Host')
+  const hostname = forwardedHost || (event.url.hostname + (event.url.port ? `:${event.url.port}` : ''))
   const subdomainOrCustom = extractSubdomain(hostname)
 
   // No subdomain = main domain, no site resolution needed
