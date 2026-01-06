@@ -26,13 +26,13 @@
 </script>
 
 <svelte:head>
-  <title>Sign in - EP Dealer Portal</title>
+  <title>Sign In - EP Dealer Portal</title>
 </svelte:head>
 
 <div class="min-h-screen flex items-center justify-center bg-gray-50">
   <Card class="w-[400px]">
     <CardHeader>
-      <CardTitle class="text-2xl font-bold text-center">Sign In</CardTitle>
+      <CardTitle class="text-2xl font-bold text-center">EP Dealer Portal</CardTitle>
     </CardHeader>
     <CardContent>
       {#if $page.url.searchParams.get("verified") == "true"}
@@ -61,7 +61,7 @@
         <div class="text-muted-foreground">
           Don't have an account?
           <a href="/sign_up" class="text-primary hover:underline ml-1">
-            Sign up
+            Create account
           </a>
         </div>
       </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Home, Settings, LogOut, BarChart3, Users, AlertCircle, ScrollText, UserCircle } from "lucide-svelte";
+  import { Home, Settings, LogOut, BarChart3, Users, AlertCircle, ScrollText, UserCircle, Globe } from "lucide-svelte";
   import * as Sidebar from "$lib/components/ui/sidebar/index.js";
   import { Button } from "$lib/components/ui/button";
   import { page } from "$app/stores";
@@ -74,6 +74,16 @@
                 <a href="/app/users" onclick={navigate("/app/users")} {...props}>
                   <Users class="size-4" />
                   <span>Users</span>
+                </a>
+              {/snippet}
+            </Sidebar.MenuButton>
+          </Sidebar.MenuItem>
+          <Sidebar.MenuItem>
+            <Sidebar.MenuButton isActive={currentPath.includes("/sites")}>
+              {#snippet child({ props })}
+                <a href="/app/sites" onclick={navigate("/app/sites")} {...props}>
+                  <Globe class="size-4" />
+                  <span>Sites</span>
                 </a>
               {/snippet}
             </Sidebar.MenuButton>

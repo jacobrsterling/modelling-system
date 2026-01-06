@@ -149,6 +149,39 @@ export interface Database {
           },
         ]
       }
+      sites: {
+        Row: {
+          id: string
+          reference: number
+          name: string
+          subdomain: string
+          custom_domain: string | null
+          status: number
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          reference?: number
+          name: string
+          subdomain: string
+          custom_domain?: string | null
+          status?: number
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          reference?: number
+          name?: string
+          subdomain?: string
+          custom_domain?: string | null
+          status?: number
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
